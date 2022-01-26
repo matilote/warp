@@ -1,6 +1,2 @@
 #!/bin/bash
-cd /home/ubuntu/warp
-python -m venv venv
-source venv/bin/activate
-pip install poetry
-make test_semantics
+poetry run make test_semantics
