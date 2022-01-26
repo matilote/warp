@@ -36,7 +36,7 @@ jobs:
       - name: Run test semantics
         run: |
           cd /home/ubuntu/warp
-          $HOME/.poetry/bin/poetry run make test_semantics
+          /home/ubuntu/.poetry/bin/poetry run make test_semantics
           
   stop-runner:
     name: Stop self-hosted EC2 runner
