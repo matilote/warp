@@ -6,6 +6,5 @@ files:
     runas: ubuntu
 hooks:
   AfterInstall:
-    - location: scripts/run_semantic_tests.sh
+    - location: scripts/run_test_semantics.sh
       timeout: 3600
-      runas: codedeployuser
