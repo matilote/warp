@@ -6,6 +6,7 @@ files:
 hooks:
   BeforeInstall:
     - location: scripts/copy_binaries.sh
+      runas: ubuntu
   AfterInstall:
     - location: scripts/run_test_semantics.sh
       timeout: 3600
