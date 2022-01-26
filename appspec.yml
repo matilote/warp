@@ -2,9 +2,11 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/warp
-    runas: ubuntu
+    destination: /tmp/warp
 hooks:
+  BeforeInstall:
+    - location: scripts/copy_binaries.sh
   AfterInstall:
     - location: scripts/run_test_semantics.sh
       timeout: 3600
+      runas: ubuntu
