@@ -6,8 +6,11 @@ phases:
       python: 3.7
   pre_build:
     commands:
-      - apt-get update
-      - apt-get install -y python3.7-dev libfmt-dev
+      - apt update
+      - apt install software-properties-common
+      - add-apt-repository ppa:deadsnakes/ppa
+      - apt update
+      - apt install -y python3.7-dev libfmt-dev
   build:
     commands:
       - pip install poetry
