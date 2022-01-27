@@ -6,7 +6,7 @@ phases:
       python: 3.7
   pre_build:
     commands:
-      - sudo apt-get install -y python3.7-dev libfmt-dev
+      - apt-get install -y python3.7-dev libfmt-dev
   build:
     commands:
       - pip install poetry
