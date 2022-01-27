@@ -1,12 +1,20 @@
+
 version: 0.2
 
 phases:
   pre_build:
     commands:
-      - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+      - apt update
+      - apt install -y software-properties-common
+      - add-apt-repository -y ppa:deadsnakes/ppa
+      - apt update
+      - apt install -y python3.7-dev python3.7 libfmt-dev libz3-dev libgmp3-dev libboost-all-dev
   build:
     commands:
-      - echo Build started on `date`
-      - echo Building the Docker image...          
-      - docker build -t warp-test-run .
+      - python3.7 -m venv ~/warp
+      - . ~/warp/bin/activate
+      - pip install poetry
+      - make test_semantics
+  post_build:
+    commands:
+      - echo Build completed on `date`
