@@ -10,7 +10,7 @@ phases:
       - apt install -y software-properties-common
       - add-apt-repository -y ppa:deadsnakes/ppa
       - apt update
-      - apt install -y python3.7-dev libfmt-dev libgmp3-dev libboost-all-dev
+      - apt install -y python3.7-dev libfmt-dev libz3-dev libgmp3-dev libboost-all-dev
   build:
     commands:
       - pip install poetry
