@@ -16,7 +16,7 @@ phases:
       - python3.7 -m venv ~/warp
       - . ~/warp/bin/activate
       - pip install poetry
-      - poetry run make test_semantics
+      - make test_semantics
   post_build:
     commands:
       - echo Build completed on `date`
