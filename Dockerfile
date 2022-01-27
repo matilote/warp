@@ -1,6 +1,6 @@
-FROM public.ecr.aws/sam/build-python3.7:latest
+FROM python:3.7.12-slim-buster
 
-RUN apt-get update && apt-get install -y build-essential libgmp3-dev libboost-all-dev python3.7-dev libfmt-dev curl
+RUN apt-get update && apt-get install -y build-essential libz3-dev libgmp3-dev libboost-all-dev python3.7-dev libfmt-dev curl
 
 # Get Rust
 RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
