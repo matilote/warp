@@ -4,10 +4,10 @@ files:
   - source: /
     destination: /tmp/warp
 hooks:
-  BeforeInstall:
+  AfterInstall:
     - location: scripts/copy_binaries.sh
       runas: ubuntu
-  AfterInstall:
+  ApplicationStart:
     - location: scripts/run_test_semantics.sh
       timeout: 3600
       runas: ubuntu
