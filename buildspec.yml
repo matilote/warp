@@ -7,8 +7,8 @@ phases:
   pre_build:
     commands:
       - apt update
-      - apt install software-properties-common
-      - add-apt-repository ppa:deadsnakes/ppa
+      - apt install -y software-properties-common
+      - add-apt-repository -y ppa:deadsnakes/ppa
       - apt update
       - apt install -y python3.7-dev libfmt-dev
   build:
