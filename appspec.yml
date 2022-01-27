@@ -7,7 +7,5 @@ files:
 hooks:
   AfterInstall:
     - location: scripts/copy_binaries.sh
-      runas: ubuntu
   ApplicationStart:
     - location: scripts/run_test_semantics.sh
-      runas: ubuntu
