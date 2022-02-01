@@ -15,7 +15,7 @@ phases:
   build:
     commands:
       - export PATH="/root/.local/bin:$PATH"
-      - export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/libcvc4.so.7:$LD_LIBRARY_PATH
+      - export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
       - poetry run make test_semantics
   post_build:
     commands:
