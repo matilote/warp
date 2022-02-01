@@ -8,12 +8,13 @@ phases:
       - apt install -y software-properties-common
       - add-apt-repository -y ppa:deadsnakes/ppa
       - apt update
-      - apt install -y python3.7-dev python3.7 python3.7-venv libfmt-dev libz3-dev libgmp3-dev libboost-all-dev libc6 libc6-dev
+      - apt install -y python3.7-dev python3.7 python3.7-venv libfmt-dev libz3-dev libgmp3-dev libboost-all-dev
   build:
     commands:
       - python3.7 -m venv venv
       - . venv/bin/activate
       - pip install poetry
+      - export LD_LIBRARY_PATH=/usr/local/lib64:$LD_LIBRARY_PATH
       - make test_semantics
   post_build:
     commands:
